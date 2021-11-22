@@ -8,6 +8,8 @@ bot = telebot.TeleBot(config.TOKEN)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
+    sti = open('Stickers/welcome_from_povish.webp', 'rb')
+    bot.send_sticker(message.chat.id, sti)
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton("🎲 Рандомное число")
     item2 = types.KeyboardButton("😊 Как дела?")
